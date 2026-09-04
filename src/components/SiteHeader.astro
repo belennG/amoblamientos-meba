@@ -1,0 +1,93 @@
+---
+import { whatsappUrl } from '../data/site';
+---
+
+<header id="site-header">
+  <div class="container-x bar">
+    <a href="#top" class="logo" aria-label="Amoblamientos MEBA — inicio">
+      <span class="logo__mark">M</span>
+      <span class="logo__word">Amoblamientos <strong>MEBA</strong></span>
+    </a>
+    <a class="cta" href={whatsappUrl()} target="_blank" rel="noopener">Presupuesto</a>
+  </div>
+</header>
+
+<script>
+  const header = document.getElementById('site-header');
+  const onScroll = () => header?.classList.toggle('is-stuck', window.scrollY > 40);
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+</script>
+
+<style>
+  header {
+    position: fixed;
+    inset: 0 0 auto;
+    z-index: 40;
+    transition:
+      background-color 0.3s ease,
+      border-color 0.3s ease,
+      backdrop-filter 0.3s ease;
+    border-bottom: 1px solid transparent;
+  }
+  header.is-stuck {
+    background: rgba(13, 11, 10, 0.82);
+    backdrop-filter: blur(10px);
+    border-bottom-color: var(--color-line);
+  }
+  .bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 0.9rem;
+  }
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    text-decoration: none;
+    color: var(--color-cream);
+  }
+  .logo__mark {
+    display: inline-grid;
+    place-items: center;
+    width: 2rem;
+    height: 2rem;
+    border: 1px solid var(--color-gold);
+    color: var(--color-gold);
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    border-radius: 2px;
+  }
+  .logo__word {
+    font-family: var(--font-serif);
+    font-size: 1.05rem;
+    letter-spacing: 0.02em;
+  }
+  .logo__word strong {
+    color: var(--color-gold);
+    font-weight: 600;
+  }
+  @media (max-width: 480px) {
+    .logo__word {
+      display: none;
+    }
+  }
+  .cta {
+    font-size: 0.8rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-cream);
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 2px;
+    padding: 0.5rem 1rem;
+    transition:
+      border-color 0.25s,
+      color 0.25s;
+  }
+  .cta:hover {
+    border-color: var(--color-gold);
+    color: var(--color-gold);
+  }
+</style>

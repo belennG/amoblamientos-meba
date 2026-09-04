@@ -1,0 +1,15 @@
+---
+// Envuelve su contenido y lo revela (fade + subida) al entrar en viewport.
+// El movimiento se anula con prefers-reduced-motion (ver global.css).
+interface Props {
+  as?: keyof HTMLElementTagNameMap;
+  delay?: number;
+  class?: string;
+}
+const { as = 'div', delay = 0, class: className = '' } = Astro.props;
+const Tag = as;
+---
+
+<Tag class:list={['reveal', className]} style={delay ? `--reveal-delay:${delay}ms` : undefined}>
+  <slot />
+</Tag>

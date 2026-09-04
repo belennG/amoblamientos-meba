@@ -1,0 +1,189 @@
+---
+import type { Proyecto } from '../data/proyectos';
+import { tituloProyecto, subtituloProyecto } from '../data/proyectos';
+
+interface Props {
+  proyecto: Proyecto;
+  index: number;
+}
+const { proyecto, index } = Astro.props;
+const titulo = tituloProyecto(proyecto);
+const subtitulo = subtituloProyecto(proyecto);
+const single = proyecto.fotos.length <= 1;
+---
+
+<article class="proy">
+  <header class="proy__head">
+    <h3>{titulo}</h3>
+    <p>{subtitulo}</p>
+  </header>
+
+  <div class="embla" data-embla data-single={single ? '' : undefined}>
+    <div class="embla__viewport">
+      <div class="embla__container">
+        {
+          proyecto.fotos.map((foto, i) => (
+            <div class="embla__slide">
+              <div class="frame" style={`background-image:url(${foto.blur})`}>
+                <img
+                  class="frame__blur"
+                  src={foto.blur}
+                  alt=""
+                  aria-hidden="true"
+                  loading="lazy"
+                />
+                <img
+                  class="frame__img"
+                  src={foto.src}
+                  srcset={foto.srcset}
+                  sizes="(min-width: 1000px) 900px, 100vw"
+                  alt={foto.alt}
+                  width={foto.width}
+                  height={foto.height}
+                  loading={index === 0 && i === 0 ? 'eager' : 'lazy'}
+                  decoding="async"
+                />
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    {
+      !single && (
+        <div class="embla__controls">
+          <button class="embla__btn" data-embla-prev aria-label="Foto anterior">
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+              <path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="1.6" />
+            </svg>
+          </button>
+          <div class="embla__dots" data-embla-dots aria-hidden="true" />
+          <button class="embla__btn" data-embla-next aria-label="Foto siguiente">
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+              <path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.6" />
+            </svg>
+          </button>
+        </div>
+      )
+    }
+  </div>
+</article>
+
+<style>
+  .proy {
+    margin-top: clamp(2.5rem, 7vw, 4.5rem);
+  }
+  .proy:first-of-type {
+    margin-top: clamp(2rem, 5vw, 3rem);
+  }
+  .proy__head {
+    display: flex;
+    align-items: baseline;
+    gap: 0.9rem;
+    flex-wrap: wrap;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--color-line);
+    margin-bottom: 1.4rem;
+  }
+  .proy__head h3 {
+    font-size: clamp(1.5rem, 3.6vw, 2.1rem);
+    margin: 0;
+  }
+  .proy__head p {
+    margin: 0;
+    color: var(--color-muted);
+    font-size: 0.85rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .embla__viewport {
+    overflow: hidden;
+    border-radius: 2px;
+  }
+  .embla__container {
+    display: flex;
+    touch-action: pan-y pinch-zoom;
+  }
+  .embla[data-single] .embla__container {
+    display: block;
+  }
+  .embla__slide {
+    flex: 0 0 100%;
+    min-width: 0;
+  }
+
+  .frame {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background-color: #000;
+    background-size: cover;
+    background-position: center;
+  }
+  .frame__blur {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.25);
+    filter: blur(28px) saturate(1.1);
+  }
+  .frame__img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .embla__controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  .embla__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 1px solid var(--color-line);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--color-cream);
+    cursor: pointer;
+    transition:
+      border-color 0.25s,
+      color 0.25s;
+  }
+  .embla__btn:hover:not(:disabled) {
+    border-color: var(--color-gold);
+    color: var(--color-gold);
+  }
+  .embla__btn:disabled {
+    opacity: 0.3;
+    cursor: default;
+  }
+  .embla__dots {
+    display: flex;
+    gap: 0.5rem;
+  }
+  .embla__dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 999px;
+    border: 0;
+    padding: 0;
+    background: rgba(255, 255, 255, 0.25);
+    cursor: pointer;
+    transition: background 0.25s;
+  }
+  .embla__dot.is-active {
+    background: var(--color-gold);
+  }
+</style>

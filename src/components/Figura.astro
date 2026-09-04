@@ -1,0 +1,52 @@
+---
+import type { ProyectoFoto } from '../data/proyectos';
+
+interface Props {
+  foto: ProyectoFoto;
+  sizes?: string;
+  /** relación de aspecto del recorte, ej. "4 / 5" */
+  ratio?: string;
+  class?: string;
+  loading?: 'lazy' | 'eager';
+}
+const {
+  foto,
+  sizes = '(min-width: 900px) 40vw, 100vw',
+  ratio = '4 / 5',
+  class: className = '',
+  loading = 'lazy',
+} = Astro.props;
+---
+
+<figure
+  class:list={['figura', className]}
+  style={`aspect-ratio:${ratio};background-image:url(${foto.blur})`}
+>
+  <img
+    src={foto.src}
+    srcset={foto.srcset}
+    sizes={sizes}
+    alt={foto.alt}
+    width={foto.width}
+    height={foto.height}
+    loading={loading}
+    decoding="async"
+  />
+</figure>
+
+<style>
+  .figura {
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+    border-radius: 2px;
+    background-size: cover;
+    background-position: center;
+  }
+  .figura img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(0.92);
+  }
+</style>

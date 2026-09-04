@@ -1,0 +1,48 @@
+---
+import Base from '../layouts/Base.astro';
+import { whatsappUrl } from '../data/site';
+---
+
+<Base title="Consulta enviada" path="/gracias" noindex>
+  <main class="gracias">
+    <div class="container-x inner">
+      <p class="overline">Recibido</p>
+      <h1>¡Gracias por escribirnos!</h1>
+      <p class="lead">
+        Tu consulta llegó a Amoblamientos MEBA. Te vamos a responder a la brevedad para coordinar el
+        relevamiento de tu farmacia. Si querés adelantar algo, escribinos por WhatsApp.
+      </p>
+      <div class="cta">
+        <a class="btn btn-wa" href={whatsappUrl()} target="_blank" rel="noopener">Abrir WhatsApp</a>
+        <a class="btn btn-outline" href="/">Volver al inicio</a>
+      </div>
+    </div>
+  </main>
+</Base>
+
+<style>
+  .gracias {
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+  .inner {
+    max-width: 40rem;
+    padding-block: 6rem;
+  }
+  h1 {
+    font-size: clamp(2.4rem, 7vw, 3.6rem);
+    margin: 0.8rem 0 1.2rem;
+  }
+  .lead {
+    color: var(--color-muted);
+    margin: 0 auto 2.4rem;
+  }
+  .cta {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+</style>

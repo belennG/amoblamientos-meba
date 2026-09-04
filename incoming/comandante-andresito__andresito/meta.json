@@ -1,0 +1,13 @@
+{
+  "localidad": "Comandante Andresito",
+  "provincia": "Misiones",
+  "anio": 2026,
+  "orden": ["salon-01.jpg", "salon-05.jpg", "perfumeria-04.jpg", "vitrina-02.jpg", "obra-03.jpg"],
+  "fotos": {
+    "salon-01.jpg": "Salón de venta terminado con góndolas centrales y estanterías perimetrales en melamina blanca, mostrador de atención al fondo.",
+    "salon-05.jpg": "Vista del salón con góndolas de perfumería y sección de indumentaria infantil sobre estanterías blancas iluminadas.",
+    "perfumeria-04.jpg": "Mueble de perfumería y cosmética con estantes de vidrio, espejo central e iluminación LED perimetral.",
+    "vitrina-02.jpg": "Isla vitrina con tapa de vidrio e iluminación interior para exhibición de accesorios, junto al sector de cajas.",
+    "obra-03.jpg": "Montaje del mobiliario en obra: mostradores y paneles de melamina embalados antes de la instalación final."
+  }
+}

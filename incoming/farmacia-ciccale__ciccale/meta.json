@@ -1,0 +1,14 @@
+{
+  "farmacia": "Farmacia Ciccale",
+  "localidad": "",
+  "provincia": "",
+  "anio": 2026,
+  "orden": ["mostrador-05.jpg", "cartel-02.jpg", "mostrador-03.jpg", "estanteria-04.jpg", "rincon-01.jpg"],
+  "fotos": {
+    "mostrador-05.jpg": "Mostrador principal de Farmacia Ciccale con frente verde, columna señalizadora con el logo y estantería alta vidriada e iluminada.",
+    "cartel-02.jpg": "Detalle del mostrador con el cartel institucional de Farmacia Ciccale sobre frente verde y alacenas superiores con puertas de vidrio.",
+    "mostrador-03.jpg": "Mostrador con tapa de vidrio y cajoneras, estantería de slatwall con estantes blancos e iluminación LED, y acceso al depósito.",
+    "estanteria-04.jpg": "Estantería perimetral en melamina blanca con paneles slatwall, cajones verdes e iluminación LED vertical.",
+    "rincon-01.jpg": "Rincón de estanterías en L con zócalo verde, estantes regulables y tiras LED, listo para reponer mercadería."
+  }
+}

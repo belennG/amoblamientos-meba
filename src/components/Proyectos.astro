@@ -1,0 +1,80 @@
+---
+import Section from './Section.astro';
+import Reveal from './Reveal.astro';
+import ProyectoCarrusel from './ProyectoCarrusel.astro';
+import { proyectos } from '../data/proyectos';
+---
+
+<Section id="proyectos" variant="panel">
+  <div class="container-x">
+    <Reveal>
+      <p class="overline">Proyectos</p>
+      <h2>Farmacias que ya trabajan con nuestros muebles</h2>
+      <p class="lead">
+        Cada farmacia tiene su propia planta, su clientela y su estilo. Estas son algunas de las que
+        equipamos, con fotos reales de la obra terminada.
+      </p>
+    </Reveal>
+
+    <div class="lista">
+      {proyectos.map((p, i) => <ProyectoCarrusel proyecto={p} index={i} />)}
+    </div>
+  </div>
+</Section>
+
+<script>
+  import EmblaCarousel from 'embla-carousel';
+
+  document.querySelectorAll<HTMLElement>('.embla').forEach((root) => {
+    if (root.hasAttribute('data-single')) return;
+    const viewport = root.querySelector<HTMLElement>('.embla__viewport');
+    if (!viewport) return;
+
+    const embla = EmblaCarousel(viewport, { loop: false, align: 'center', duration: 22 });
+
+    const prev = root.querySelector<HTMLButtonElement>('[data-embla-prev]');
+    const next = root.querySelector<HTMLButtonElement>('[data-embla-next]');
+    const dotsWrap = root.querySelector<HTMLElement>('[data-embla-dots]');
+
+    const dots: HTMLButtonElement[] = [];
+    if (dotsWrap) {
+      embla.scrollSnapList().forEach((_, i) => {
+        const b = document.createElement('button');
+        b.className = 'embla__dot';
+        b.type = 'button';
+        b.setAttribute('aria-label', `Ir a la foto ${i + 1}`);
+        b.addEventListener('click', () => embla.scrollTo(i));
+        dotsWrap.appendChild(b);
+        dots.push(b);
+      });
+    }
+
+    const update = () => {
+      prev && (prev.disabled = !embla.canScrollPrev());
+      next && (next.disabled = !embla.canScrollNext());
+      const sel = embla.selectedScrollSnap();
+      dots.forEach((d, i) => d.classList.toggle('is-active', i === sel));
+    };
+
+    prev?.addEventListener('click', () => embla.scrollPrev());
+    next?.addEventListener('click', () => embla.scrollNext());
+    embla.on('select', update).on('reInit', update);
+    update();
+  });
+</script>
+
+<style>
+  h2 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin: 0.6rem 0 1.3rem;
+    max-width: 22ch;
+  }
+  .lead {
+    color: var(--color-muted);
+    max-width: 52ch;
+    margin: 0;
+  }
+  .lista {
+    margin-top: clamp(1rem, 4vw, 2rem);
+  }
+</style>

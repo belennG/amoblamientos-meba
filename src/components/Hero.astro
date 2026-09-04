@@ -1,0 +1,139 @@
+---
+import { site, whatsappUrl } from '../data/site';
+
+// Fondo del hero: foto de salón terminado del pipeline de proyectos.
+const heroImg = '/images/proyectos/andresito/salon-01-1320.webp';
+---
+
+<section class="hero">
+  <div class="hero__bg" style={`background-image:url(${heroImg})`}></div>
+  <div class="hero__scrim"></div>
+
+  <div class="container-x hero__inner">
+    <p class="overline hero__city">{site.ciudad} · {site.provincia} · Todo el país</p>
+    <h1 class="hero__title">Amoblamientos <span>MEBA</span></h1>
+    <p class="hero__tagline">Amoblamos tu farmacia, de la idea a la instalación.</p>
+    <div class="hero__cta">
+      <a class="btn btn-solid" href={whatsappUrl()} target="_blank" rel="noopener">
+        Pedir presupuesto
+      </a>
+      <a class="btn btn-outline" href="#proyectos">Ver proyectos</a>
+    </div>
+  </div>
+
+  <a href="#que-hacemos" class="hero__cue" aria-label="Desplazarse hacia abajo">
+    <span class="overline" style="font-size:0.6rem">Scroll</span>
+    <span class="hero__cue-line scroll-cue"></span>
+  </a>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+  }
+  .hero__bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.12);
+    animation: hero-zoom 1.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+  .hero__scrim {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(13, 11, 10, 0.62) 0%,
+      rgba(13, 11, 10, 0.45) 38%,
+      rgba(13, 11, 10, 0.94) 100%
+    );
+  }
+  .hero__inner {
+    position: relative;
+    max-width: 46rem;
+    animation: hero-rise 1s cubic-bezier(0.22, 1, 0.36, 1) 0.35s both;
+  }
+  .hero__city {
+    margin: 0 0 1.4rem;
+  }
+  .hero__title {
+    font-size: clamp(3rem, 9vw, 5.5rem);
+    margin: 0 0 1.2rem;
+  }
+  .hero__title span {
+    color: var(--color-gold);
+  }
+  .hero__tagline {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: clamp(1.25rem, 3.4vw, 1.75rem);
+    color: var(--color-muted);
+    margin: 0 auto 2.4rem;
+    max-width: 34rem;
+  }
+  .hero__cta {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .hero__cue {
+    position: absolute;
+    bottom: 1.8rem;
+    left: 50%;
+    translate: -50% 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    opacity: 0.65;
+    text-decoration: none;
+  }
+  .hero__cue-line {
+    width: 1px;
+    height: 2.5rem;
+    background: rgba(255, 255, 255, 0.45);
+    animation: cue-bob 2s ease-in-out infinite;
+  }
+
+  @keyframes hero-zoom {
+    to {
+      transform: scale(1);
+    }
+  }
+  @keyframes hero-rise {
+    from {
+      opacity: 0;
+      transform: translateY(28px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  @keyframes cue-bob {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(8px);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero__bg {
+      animation: none;
+      transform: scale(1);
+    }
+    .hero__inner {
+      animation: none;
+    }
+  }
+</style>

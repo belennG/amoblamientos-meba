@@ -1,0 +1,102 @@
+---
+import Section from './Section.astro';
+import Reveal from './Reveal.astro';
+import { fotoPorNombre } from '../data/proyectos';
+
+const fondo = fotoPorNombre('andresito', 'obra-03');
+
+const hitos = [
+  { dato: 'Bragado', detalle: 'Taller y fabricación · Provincia de Buenos Aires' },
+  { dato: 'Todo el país', detalle: 'Coordinamos flete e instalación donde estés' },
+  { dato: 'Misiones', detalle: 'Comandante Andresito · proyecto 2026' },
+];
+---
+
+<Section id="cobertura" variant="ink" class="cobertura">
+  <div class="bg" style={`background-image:url(${fondo.src})`} aria-hidden="true"></div>
+  <div class="scrim" aria-hidden="true"></div>
+
+  <div class="container-x inner">
+    <Reveal>
+      <p class="overline">Cobertura nacional</p>
+      <h2>Estamos en Bragado y llegamos a toda la Argentina</h2>
+      <p class="lead">
+        Fabricamos en nuestro taller de Bragado y nos encargamos de la logística hasta la puerta de tu
+        farmacia. Ya instalamos mobiliario en la Provincia de Buenos Aires y en el interior del país;
+        organizamos cada envío para que el mueble llegue en fecha y se arme en el lugar.
+      </p>
+    </Reveal>
+
+    <div class="hitos">
+      {
+        hitos.map((h, i) => (
+          <Reveal class="hito" delay={i * 90}>
+            <span class="hito__dato">{h.dato}</span>
+            <span class="hito__detalle">{h.detalle}</span>
+          </Reveal>
+        ))
+      }
+    </div>
+  </div>
+</Section>
+
+<style>
+  .cobertura {
+    overflow: hidden;
+  }
+  .bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.28;
+  }
+  .scrim {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(13, 11, 10, 0.85),
+      rgba(13, 11, 10, 0.95)
+    );
+  }
+  .inner {
+    position: relative;
+  }
+  h2 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin: 0.6rem 0 1.3rem;
+    max-width: 24ch;
+  }
+  .lead {
+    color: var(--color-muted);
+    max-width: 54ch;
+    margin: 0;
+  }
+  .hitos {
+    margin-top: clamp(3rem, 8vw, 4.5rem);
+    display: grid;
+    gap: 1.5rem;
+  }
+  @media (min-width: 800px) {
+    .hitos {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  .hito {
+    border-left: 2px solid var(--color-gold);
+    padding-left: 1.1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+  .hito__dato {
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+    color: var(--color-cream);
+  }
+  .hito__detalle {
+    color: var(--color-muted);
+    font-size: 0.9rem;
+  }
+</style>

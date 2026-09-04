@@ -1,0 +1,106 @@
+---
+import { site, whatsappUrl } from '../data/site';
+const anio = new Date().getFullYear();
+---
+
+<footer>
+  <div class="container-x">
+    <div class="top">
+      <div>
+        <p class="marca">Amoblamientos <span>MEBA</span></p>
+        <p class="claim">Amoblamientos para farmacias · Diseño 3D sin cargo</p>
+      </div>
+      <nav aria-label="Enlaces del pie">
+        <a href="#que-hacemos">Qué hacemos</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#renders">Renders y convenios</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+
+    <div class="bottom">
+      <div class="contacto">
+        <a href={whatsappUrl()} target="_blank" rel="noopener">WhatsApp +54 9 351 286-7538</a>
+        <a href={`mailto:${site.email}`}>{site.email}</a>
+        <span>{site.ciudad}, {site.provincia}</span>
+      </div>
+      <div class="redes">
+        <a href={site.instagram} target="_blank" rel="noopener">Instagram</a>
+        <a href={site.facebook} target="_blank" rel="noopener">Facebook</a>
+      </div>
+    </div>
+
+    <p class="legal">© {anio} Amoblamientos MEBA · {site.pais}</p>
+  </div>
+</footer>
+
+<style>
+  footer {
+    background: var(--color-panel-2);
+    border-top: 1px solid var(--color-line);
+    padding-block: clamp(3rem, 8vw, 4.5rem);
+  }
+  .top {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--color-line);
+  }
+  .marca {
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+    margin: 0;
+  }
+  .marca span {
+    color: var(--color-gold);
+  }
+  .claim {
+    color: var(--color-muted);
+    font-size: 0.9rem;
+    margin: 0.3rem 0 0;
+  }
+  nav {
+    display: flex;
+    gap: 1.4rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  nav a {
+    color: var(--color-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+  nav a:hover {
+    color: var(--color-gold);
+  }
+  .bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    padding-block: 2rem;
+  }
+  .contacto,
+  .redes {
+    display: flex;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+  }
+  .bottom a,
+  .bottom span {
+    color: var(--color-muted);
+    text-decoration: none;
+    font-size: 0.88rem;
+  }
+  .bottom a:hover {
+    color: var(--color-gold);
+  }
+  .legal {
+    color: var(--color-muted);
+    font-size: 0.8rem;
+    margin: 0;
+    opacity: 0.7;
+  }
+</style>

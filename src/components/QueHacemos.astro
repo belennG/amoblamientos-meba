@@ -1,0 +1,114 @@
+---
+import Section from './Section.astro';
+import Reveal from './Reveal.astro';
+import Figura from './Figura.astro';
+import { fotoPorNombre } from '../data/proyectos';
+
+const servicios = [
+  {
+    titulo: 'Proyecto a medida',
+    texto:
+      'Relevamos tu local, escuchamos cómo trabajás y diseñamos la distribución completa: mostradores, líneas de venta, depósito y sector de recetario.',
+  },
+  {
+    titulo: 'Fabricación propia',
+    texto:
+      'Producimos todo en nuestro taller de Bragado: melamina de primera calidad, mostradores, estanterías, vitrinas, paneles slatwall e iluminación LED.',
+  },
+  {
+    titulo: 'Instalación llave en mano',
+    texto:
+      'Coordinamos la logística y el armado en tu localidad. Entregamos la farmacia lista para reponer mercadería y abrir.',
+  },
+  {
+    titulo: 'Reformas y ampliaciones',
+    texto:
+      'Renovamos farmacias en funcionamiento por etapas, cuidando los tiempos de atención y sumando muebles al mobiliario existente.',
+  },
+];
+
+const foto = fotoPorNombre('andresito', 'perfumeria-04');
+---
+
+<Section id="que-hacemos" variant="ink">
+  <div class="container-x grid">
+    <Reveal class="col-text">
+      <p class="overline">Qué hacemos</p>
+      <h2>Mobiliario pensado para farmacias, de principio a fin</h2>
+      <p class="lead">
+        Amoblamientos MEBA es un taller familiar de Bragado, Provincia de Buenos Aires, especializado en
+        equipar farmacias. Nos ocupamos de todo el proceso —diseño, fabricación e instalación— para que
+        recibas un local funcional, prolijo y a tu medida, sin importar en qué punto del país estés.
+      </p>
+    </Reveal>
+
+    <Reveal class="col-img" delay={120}>
+      <Figura foto={foto} ratio="4 / 5" sizes="(min-width: 900px) 38vw, 100vw" />
+    </Reveal>
+  </div>
+
+  <div class="container-x cards">
+    {
+      servicios.map((s, i) => (
+        <Reveal as="article" class="card" delay={i * 80}>
+          <h3>{s.titulo}</h3>
+          <p>{s.texto}</p>
+        </Reveal>
+      ))
+    }
+  </div>
+</Section>
+
+<style>
+  .grid {
+    display: grid;
+    gap: clamp(2rem, 6vw, 4.5rem);
+    align-items: center;
+  }
+  @media (min-width: 900px) {
+    .grid {
+      grid-template-columns: 1.15fr 0.85fr;
+    }
+  }
+  h2 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin: 0.6rem 0 1.4rem;
+    max-width: 20ch;
+  }
+  .lead {
+    color: var(--color-muted);
+    max-width: 46ch;
+    margin: 0;
+  }
+  .cards {
+    margin-top: clamp(3rem, 8vw, 5rem);
+    display: grid;
+    gap: 1px;
+    background: var(--color-line);
+    border: 1px solid var(--color-line);
+  }
+  @media (min-width: 640px) {
+    .cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (min-width: 1000px) {
+    .cards {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  .card {
+    background: var(--color-ink);
+    padding: 2rem 1.6rem;
+  }
+  .card h3 {
+    font-size: 1.4rem;
+    color: var(--color-gold);
+    margin: 0 0 0.7rem;
+  }
+  .card p {
+    color: var(--color-muted);
+    font-size: 0.95rem;
+    margin: 0;
+  }
+</style>

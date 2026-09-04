@@ -1,0 +1,27 @@
+---
+import Base from '../layouts/Base.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import Hero from '../components/Hero.astro';
+import QueHacemos from '../components/QueHacemos.astro';
+import Proyectos from '../components/Proyectos.astro';
+import RendersConvenios from '../components/RendersConvenios.astro';
+import Cobertura from '../components/Cobertura.astro';
+import Contacto from '../components/Contacto.astro';
+import Footer from '../components/Footer.astro';
+import WhatsappButton from '../components/WhatsappButton.astro';
+---
+
+<Base path="/" negocioSchema>
+  <span id="top"></span>
+  <SiteHeader />
+  <main>
+    <Hero />
+    <QueHacemos />
+    <Proyectos />
+    <RendersConvenios />
+    <Cobertura />
+    <Contacto />
+  </main>
+  <Footer />
+  <WhatsappButton />
+</Base>

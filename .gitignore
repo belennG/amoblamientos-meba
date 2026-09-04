@@ -1,0 +1,19 @@
+# build output
+dist/
+.astro/
+
+# dependencies
+node_modules/
+
+# env / editor / os
+.env
+.env.production
+.DS_Store
+.vscode/
+.netlify/
+npm-debug.log*
+
+# Note: incoming/ (source photos), public/images/proyectos/ (optimized WebP)
+# and src/data/proyectos.generated.ts are committed on purpose so a fresh
+# clone and the Netlify build work without running `npm run images`.
+# Run `npm run images` after adding photos, then commit the results.
