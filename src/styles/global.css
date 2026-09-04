@@ -63,8 +63,8 @@
 }
 
 @layer components {
-  /* Antetítulo en versalitas espaciadas */
-  .overline {
+  /* Antetítulo en versalitas espaciadas, con línea corta arriba */
+  .kicker {
     display: inline-block;
     font-family: var(--font-sans);
     font-weight: 400;
@@ -72,6 +72,14 @@
     letter-spacing: 0.28em;
     text-transform: uppercase;
     color: var(--color-gold);
+  }
+  .kicker::before {
+    content: '';
+    display: block;
+    width: 2.25rem;
+    height: 1px;
+    margin-bottom: 0.85rem;
+    background: var(--color-gold);
   }
 
   .container-x {

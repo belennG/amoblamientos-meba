@@ -1,5 +1,5 @@
 ---
-import { site, whatsappUrl } from '../data/site';
+import { whatsappUrl } from '../data/site';
 
 // Fondo del hero: foto de salón terminado del pipeline de proyectos.
 const heroImg = '/images/proyectos/andresito/salon-01-1320.webp';
@@ -10,7 +10,6 @@ const heroImg = '/images/proyectos/andresito/salon-01-1320.webp';
   <div class="hero__scrim"></div>
 
   <div class="container-x hero__inner">
-    <p class="overline hero__city">{site.ciudad} · {site.provincia} · Todo el país</p>
     <h1 class="hero__title">Amoblamientos <span>MEBA</span></h1>
     <p class="hero__tagline">Amoblamos tu farmacia, de la idea a la instalación.</p>
     <div class="hero__cta">
@@ -22,7 +21,7 @@ const heroImg = '/images/proyectos/andresito/salon-01-1320.webp';
   </div>
 
   <a href="#que-hacemos" class="hero__cue" aria-label="Desplazarse hacia abajo">
-    <span class="overline" style="font-size:0.6rem">Scroll</span>
+    <span class="hero__cue-label">Scroll</span>
     <span class="hero__cue-line scroll-cue"></span>
   </a>
 </section>
@@ -60,9 +59,6 @@ const heroImg = '/images/proyectos/andresito/salon-01-1320.webp';
     max-width: 46rem;
     animation: hero-rise 1s cubic-bezier(0.22, 1, 0.36, 1) 0.35s both;
   }
-  .hero__city {
-    margin: 0 0 1.4rem;
-  }
   .hero__title {
     font-size: clamp(3rem, 9vw, 5.5rem);
     margin: 0 0 1.2rem;
@@ -95,6 +91,15 @@ const heroImg = '/images/proyectos/andresito/salon-01-1320.webp';
     gap: 0.6rem;
     opacity: 0.65;
     text-decoration: none;
+  }
+  .hero__cue-label {
+    display: inline-block;
+    font-family: var(--font-sans);
+    font-weight: 400;
+    font-size: 0.6rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--color-gold);
   }
   .hero__cue-line {
     width: 1px;

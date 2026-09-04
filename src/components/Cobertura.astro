@@ -8,7 +8,6 @@ const fondo = fotoPorNombre('andresito', 'obra-03');
 const hitos = [
   { dato: 'Bragado', detalle: 'Taller y fabricación · Provincia de Buenos Aires' },
   { dato: 'Todo el país', detalle: 'Coordinamos flete e instalación donde estés' },
-  { dato: 'Misiones', detalle: 'Comandante Andresito · proyecto 2026' },
 ];
 ---
 
@@ -18,7 +17,7 @@ const hitos = [
 
   <div class="container-x inner">
     <Reveal>
-      <p class="overline">Cobertura nacional</p>
+      <p class="kicker">Cobertura nacional</p>
       <h2>Estamos en Bragado y llegamos a toda la Argentina</h2>
       <p class="lead">
         Fabricamos en nuestro taller de Bragado y nos encargamos de la logística hasta la puerta de tu
@@ -80,7 +79,8 @@ const hitos = [
   }
   @media (min-width: 800px) {
     .hitos {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
+      max-width: 40rem;
     }
   }
   .hito {

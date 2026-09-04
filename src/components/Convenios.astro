@@ -1,0 +1,69 @@
+---
+import Section from './Section.astro';
+import Reveal from './Reveal.astro';
+---
+
+<Section id="convenios" variant="panel">
+  <div class="container-x">
+    <Reveal as="article" class="bloque">
+      <p class="kicker">Matriculados</p>
+      <h2>Convenios con Colegios de Farmacéuticos</h2>
+      <p>
+        Tenemos convenios vigentes con Colegios de Farmacéuticos de distintas provincias. Si sos
+        matriculado/a, accedés a <strong>precios y condiciones especiales</strong>. Consultanos si
+        tu Colegio ya tiene convenio o cómo gestionarlo.
+      </p>
+      <a class="link" href="#contacto">Consultar por el convenio de mi provincia →</a>
+    </Reveal>
+
+    <Reveal class="nota">
+      <p>
+        Los presupuestos son siempre a medida. La forma más rápida de arrancar es
+        <strong> llamarnos o escribirnos por WhatsApp</strong> y contarnos qué necesitás.
+      </p>
+    </Reveal>
+  </div>
+</Section>
+
+<style>
+  .bloque h2 {
+    font-size: clamp(1.8rem, 4.4vw, 2.6rem);
+    margin: 1rem 0 1.5rem;
+  }
+  .bloque p {
+    color: var(--color-muted);
+    max-width: 46ch;
+    margin: 0 0 2.2rem;
+  }
+  .bloque strong {
+    color: var(--color-cream);
+    font-weight: 500;
+  }
+  .link {
+    color: var(--color-gold);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.25s;
+  }
+  .link:hover {
+    border-color: var(--color-gold);
+  }
+  .nota {
+    margin-top: clamp(3rem, 8vw, 5rem);
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-line);
+  }
+  .nota p {
+    margin: 0;
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: clamp(1.15rem, 2.8vw, 1.5rem);
+    color: var(--color-cream);
+    max-width: 40ch;
+  }
+  .nota strong {
+    font-style: normal;
+    color: var(--color-gold);
+    font-weight: 500;
+  }
+</style>

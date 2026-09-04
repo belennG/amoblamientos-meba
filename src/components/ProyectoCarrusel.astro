@@ -77,6 +77,12 @@ const single = proyecto.fotos.length <= 1;
   .proy:first-of-type {
     margin-top: clamp(2rem, 5vw, 3rem);
   }
+  @media (min-width: 900px) {
+    .proy,
+    .proy:first-of-type {
+      margin-top: 0;
+    }
+  }
   .proy__head {
     display: flex;
     align-items: baseline;

@@ -7,8 +7,8 @@ import { proyectos } from '../data/proyectos';
 
 <Section id="proyectos" variant="panel">
   <div class="container-x">
-    <Reveal>
-      <p class="overline">Proyectos</p>
+    <Reveal class="intro">
+      <p class="kicker">Proyectos</p>
       <h2>Farmacias que ya trabajan con nuestros muebles</h2>
       <p class="lead">
         Cada farmacia tiene su propia planta, su clientela y su estilo. Estas son algunas de las que
@@ -64,17 +64,30 @@ import { proyectos } from '../data/proyectos';
 </script>
 
 <style>
+  .intro {
+    text-align: center;
+  }
+  .intro :global(.kicker)::before {
+    margin-inline: auto;
+  }
   h2 {
     font-size: clamp(2rem, 5vw, 3rem);
-    margin: 0.6rem 0 1.3rem;
+    margin: 0.6rem auto 1.3rem;
     max-width: 22ch;
   }
   .lead {
     color: var(--color-muted);
     max-width: 52ch;
-    margin: 0;
+    margin-inline: auto;
   }
   .lista {
     margin-top: clamp(1rem, 4vw, 2rem);
+  }
+  @media (min-width: 900px) {
+    .lista {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: clamp(2.5rem, 5vw, 3.5rem) clamp(2rem, 4vw, 3.5rem);
+    }
   }
 </style>

@@ -1,0 +1,42 @@
+---
+import Section from './Section.astro';
+import Reveal from './Reveal.astro';
+import { whatsappUrl } from '../data/site';
+
+const wa = whatsappUrl(
+  'Hola MEBA, quiero un render 3D sin cargo y un presupuesto para mi farmacia.',
+);
+---
+
+<Section id="renders" variant="panel-2">
+  <div class="container-x">
+    <Reveal as="article" class="bloque">
+      <p class="kicker">Diseño 3D</p>
+      <h2>Renders sin cargo</h2>
+      <p>
+        Antes de fabricar nada te mostramos cómo va a quedar tu farmacia. Preparamos los diseños y
+        renders en 3D <strong>sin costo y sin compromiso</strong>: los revisás, pedís cambios y
+        recién ahí avanzamos con el presupuesto final.
+      </p>
+      <a class="btn btn-wa" href={wa} target="_blank" rel="noopener">
+        Pedir mi render por WhatsApp
+      </a>
+    </Reveal>
+  </div>
+</Section>
+
+<style>
+  .bloque h2 {
+    font-size: clamp(1.8rem, 4.4vw, 2.6rem);
+    margin: 1rem 0 1.5rem;
+  }
+  .bloque p {
+    color: var(--color-muted);
+    max-width: 46ch;
+    margin: 0 0 2.2rem;
+  }
+  .bloque strong {
+    color: var(--color-cream);
+    font-weight: 500;
+  }
+</style>

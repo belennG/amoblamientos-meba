@@ -33,7 +33,7 @@ const foto = fotoPorNombre('andresito', 'perfumeria-04');
 <Section id="que-hacemos" variant="ink">
   <div class="container-x grid">
     <Reveal class="col-text">
-      <p class="overline">Qué hacemos</p>
+      <p class="kicker">Qué hacemos</p>
       <h2>Mobiliario pensado para farmacias, de principio a fin</h2>
       <p class="lead">
         Amoblamientos MEBA es un taller familiar de Bragado, Provincia de Buenos Aires, especializado en
@@ -99,16 +99,16 @@ const foto = fotoPorNombre('andresito', 'perfumeria-04');
   }
   .card {
     background: var(--color-ink);
-    padding: 2rem 1.6rem;
+    padding: clamp(2.25rem, 4vw, 3.25rem) clamp(1.75rem, 3.5vw, 2.4rem);
   }
   .card h3 {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     color: var(--color-gold);
-    margin: 0 0 0.7rem;
+    margin: 0 0 0.85rem;
   }
   .card p {
     color: var(--color-muted);
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     margin: 0;
   }
 </style>
