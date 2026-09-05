@@ -19,6 +19,11 @@ import Reveal from './Reveal.astro';
         <li><img src="/images/convenios/colegio-01.png" alt="Colegio de Farmacéuticos de la Provincia de Buenos Aires" /></li>
         <li><img src="/images/convenios/colegio-02.png" alt="Colegio de Farmacéuticos de la Provincia de Santa Fe, 1ª Circunscripción" /></li>
         <li><img src="/images/convenios/colegio-03.png" alt="Colegio de Farmacéuticos de Córdoba" /></li>
+        <li><img src="/images/convenios/colegio-04.png" alt="Colegio de Farmacéuticos y Químicos de Misiones" /></li>
+        <li><img src="/images/convenios/colegio-05.png" alt="Colegio de Farmacéuticos del Chaco" /></li>
+        <li class="logos__teal"><img src="/images/convenios/colegio-06.png" alt="Colegio de Farmacéuticos de Entre Ríos" /></li>
+        <li><img src="/images/convenios/colegio-07.jpg" alt="Colegio de Farmacéuticos de Salta" /></li>
+        <li><img src="/images/convenios/colegio-08.png" alt="Colegio Farmacéutico de San Juan" /></li>
       </ul>
     </Reveal>
 
@@ -75,6 +80,13 @@ import Reveal from './Reveal.astro';
     height: 2.25rem;
     width: auto;
     display: block;
+  }
+  /* colegio-06 ya trae su propio fondo de color, no necesita la placa blanca */
+  .logos__teal {
+    background: transparent;
+    padding: 0;
+    border-radius: 4px;
+    overflow: hidden;
   }
   :global(#convenios .nota) {
     margin-top: clamp(3rem, 8vw, 5rem);

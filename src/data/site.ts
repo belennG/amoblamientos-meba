@@ -17,6 +17,12 @@ export const site = {
   pais: 'Argentina',
   codigoPais: 'AR',
 
+  // Plantas de fabricación (se muestran en Contacto, Footer y Cobertura).
+  talleres: [
+    { ciudad: 'Bragado', provincia: 'Provincia de Buenos Aires' },
+    { ciudad: 'Córdoba', provincia: 'Provincia de Córdoba' },
+  ],
+
   // WhatsApp Business: formato internacional, solo dígitos, sin "+".
   whatsapp: '5493512867538',
   whatsappMensaje:

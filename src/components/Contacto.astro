@@ -24,8 +24,8 @@ import { site, whatsappUrl } from '../data/site';
           <a href={`mailto:${site.email}`}>{site.email}</a>
         </li>
         <li>
-          <span>Taller</span>
-          <p>{site.ciudad}, {site.provincia}</p>
+          <span>Talleres</span>
+          {site.talleres.map((t) => <p>{t.ciudad}, {t.provincia}</p>)}
         </li>
         <li>
           <span>Redes</span>

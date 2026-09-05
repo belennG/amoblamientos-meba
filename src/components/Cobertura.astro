@@ -4,6 +4,7 @@ import Reveal from './Reveal.astro';
 
 const hitos = [
   { dato: 'Bragado', detalle: 'Taller y fabricación · Provincia de Buenos Aires' },
+  { dato: 'Córdoba', detalle: 'Segunda planta de fabricación' },
   { dato: 'Todo el país', detalle: 'Coordinamos flete e instalación donde estés' },
 ];
 ---
@@ -12,11 +13,11 @@ const hitos = [
   <div class="container-x grid">
     <Reveal class="col-text">
       <p class="kicker">Cobertura nacional</p>
-      <h2>Estamos en Bragado y llegamos a toda la Argentina</h2>
+      <h2>Estamos en Bragado y Córdoba, y llegamos a toda la Argentina</h2>
       <p class="lead">
-        Fabricamos en nuestro taller de Bragado y nos encargamos de la logística hasta la puerta de tu
-        farmacia. Ya instalamos mobiliario en la Provincia de Buenos Aires y en el interior del país;
-        organizamos cada envío para que el mueble llegue en fecha y se arme en el lugar.
+        Fabricamos en nuestros talleres de Bragado y Córdoba, y nos encargamos de la logística hasta la
+        puerta de tu farmacia. Ya instalamos mobiliario en la Provincia de Buenos Aires y en el interior
+        del país; organizamos cada envío para que el mueble llegue en fecha y se arme en el lugar.
       </p>
 
       <div class="hitos">
@@ -73,8 +74,7 @@ const hitos = [
   .hitos {
     margin-top: clamp(2.5rem, 6vw, 3.5rem);
     display: grid;
-    gap: 1.5rem;
-    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
   }
   /* .hito is rendered by <Reveal>, so it never carries this component's
      scope attribute — :global() is required for it to match. */
