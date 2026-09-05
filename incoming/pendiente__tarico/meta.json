@@ -1,0 +1,13 @@
+{
+  "farmacia": null,
+  "localidad": "",
+  "provincia": "",
+  "anio": 2026,
+  "orden": ["estanteria-01.jpg", "mostrador-02.jpg", "estanteria-03.jpg", "mostrador-04.jpg"],
+  "fotos": {
+    "estanteria-01.jpg": "Torres de estanterías blancas con iluminación LED vertical, con vidrieras cubiertas de papel durante la obra.",
+    "mostrador-02.jpg": "Mostrador con cajoneras en madera clara e isla de vidrio, junto a estanterías perimetrales iluminadas.",
+    "estanteria-03.jpg": "Detalle de estanterías blancas con cajones y perfiles LED integrados en cada módulo.",
+    "mostrador-04.jpg": "Mostrador de atención con cruz farmacéutica retroiluminada en el frente y estantes laterales."
+  }
+}

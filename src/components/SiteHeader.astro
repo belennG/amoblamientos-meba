@@ -5,8 +5,9 @@ import { whatsappUrl } from '../data/site';
 <header id="site-header">
   <div class="container-x bar">
     <a href="#top" class="logo" aria-label="Amoblamientos MEBA — inicio">
-      <span class="logo__mark">M</span>
-      <span class="logo__word">Amoblamientos <strong>MEBA</strong></span>
+      <span class="logo__plate">
+        <img src="/images/brand/logo.jpg" alt="Amoblamientos MEBA" />
+      </span>
     </a>
     <a class="cta" href={whatsappUrl()} target="_blank" rel="noopener">Presupuesto</a>
   </div>
@@ -48,30 +49,18 @@ import { whatsappUrl } from '../data/site';
     text-decoration: none;
     color: var(--color-cream);
   }
-  .logo__mark {
-    display: inline-grid;
-    place-items: center;
-    width: 2rem;
+  .logo__plate {
+    display: inline-flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 4px;
+    padding: 0.3rem 0.55rem;
+    line-height: 0;
+  }
+  .logo__plate img {
     height: 2rem;
-    border: 1px solid var(--color-gold);
-    color: var(--color-gold);
-    font-family: var(--font-serif);
-    font-size: 1.1rem;
-    border-radius: 2px;
-  }
-  .logo__word {
-    font-family: var(--font-serif);
-    font-size: 1.05rem;
-    letter-spacing: 0.02em;
-  }
-  .logo__word strong {
-    color: var(--color-gold);
-    font-weight: 600;
-  }
-  @media (max-width: 480px) {
-    .logo__word {
-      display: none;
-    }
+    width: auto;
+    display: block;
   }
   .cta {
     font-size: 0.8rem;

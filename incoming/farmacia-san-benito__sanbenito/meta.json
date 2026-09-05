@@ -1,0 +1,13 @@
+{
+  "farmacia": "Farmacia San Benito",
+  "localidad": "",
+  "provincia": "",
+  "anio": 2026,
+  "orden": ["mostrador-01.jpg", "cajas-02.jpg", "obra-03.jpg", "salon-04.jpg"],
+  "fotos": {
+    "mostrador-01.jpg": "Mostrador perimetral en blanco y verde con cajoneras y estanterías altas en la obra de Farmacia San Benito.",
+    "cajas-02.jpg": "Puestos de atención numerados con friso verde y logo institucional sobre mostrador de caja.",
+    "obra-03.jpg": "Vista en altura del salón con mostradores y estanterías de melamina en etapa final de obra.",
+    "salon-04.jpg": "Salón de doble altura con estanterías perimetrales iluminadas y grandes ventanales."
+  }
+}

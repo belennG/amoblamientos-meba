@@ -14,6 +14,12 @@ import Reveal from './Reveal.astro';
         tu Colegio ya tiene convenio o cómo gestionarlo.
       </p>
       <a class="link" href="#contacto">Consultar por el convenio de mi provincia →</a>
+
+      <ul class="logos">
+        <li><img src="/images/convenios/colegio-01.png" alt="Colegio de Farmacéuticos de la Provincia de Buenos Aires" /></li>
+        <li><img src="/images/convenios/colegio-02.png" alt="Colegio de Farmacéuticos de la Provincia de Santa Fe, 1ª Circunscripción" /></li>
+        <li><img src="/images/convenios/colegio-03.png" alt="Colegio de Farmacéuticos de Córdoba" /></li>
+      </ul>
     </Reveal>
 
     <Reveal class="nota">
@@ -49,6 +55,26 @@ import Reveal from './Reveal.astro';
   }
   .link:hover {
     border-color: var(--color-gold);
+  }
+  .logos {
+    list-style: none;
+    margin: 2.2rem 0 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .logos li {
+    display: inline-flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 4px;
+    padding: 0.6rem 0.9rem;
+  }
+  .logos img {
+    height: 2.25rem;
+    width: auto;
+    display: block;
   }
   :global(#convenios .nota) {
     margin-top: clamp(3rem, 8vw, 5rem);

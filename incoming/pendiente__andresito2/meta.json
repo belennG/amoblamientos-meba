@@ -1,0 +1,14 @@
+{
+  "farmacia": null,
+  "localidad": "",
+  "provincia": "",
+  "anio": 2026,
+  "orden": ["salon-01.jpg", "perfumeria-02.jpg", "obra-03.jpg", "salon-04.jpg", "vitrina-05.jpg"],
+  "fotos": {
+    "salon-01.jpg": "Salón de venta repuesto con perfumería, higiene infantil y sector de cosmética.",
+    "perfumeria-02.jpg": "Estanterías de cuidado personal y cosmética totalmente repuestas.",
+    "obra-03.jpg": "Montaje del mobiliario en obra, con paneles y módulos aún embalados.",
+    "salon-04.jpg": "Salón de venta terminado con islas de juguetería y cuidado personal.",
+    "vitrina-05.jpg": "Vitrina de bijouterie y accesorios con iluminación LED interior."
+  }
+}

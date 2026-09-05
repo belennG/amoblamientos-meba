@@ -1,0 +1,12 @@
+{
+  "farmacia": "Farmacia Gugafarma",
+  "localidad": "",
+  "provincia": "",
+  "anio": 2026,
+  "orden": ["fachada-02.jpg", "vidriera-01.jpg", "salon-03.jpg"],
+  "fotos": {
+    "fachada-02.jpg": "Fachada de Farmacia Gugafarma con frente celeste, vidriera iluminada y cartel institucional.",
+    "vidriera-01.jpg": "Detalle de la vidriera con el logo de Farmacia Gugafarma y estanterías de perfumería al fondo.",
+    "salon-03.jpg": "Salón de venta con estanterías de perfumería y cuidado personal en melamina blanca con iluminación LED."
+  }
+}

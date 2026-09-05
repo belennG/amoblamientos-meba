@@ -1,0 +1,14 @@
+{
+  "farmacia": null,
+  "localidad": "",
+  "provincia": "",
+  "anio": 2026,
+  "orden": ["salon-01.jpg", "estanteria-02.jpg", "salon-03.jpg", "vidriera-04.jpg", "mostrador-05.jpg"],
+  "fotos": {
+    "salon-01.jpg": "Salón con piso negro, mostradores blancos y perfil LED verde perimetral en el cielorraso.",
+    "estanteria-02.jpg": "Estantería perimetral blanca de piso a techo con perfil LED verde en la esquina superior.",
+    "salon-03.jpg": "Torre de estanterías blancas reflejada en piso de mármol, junto a un pasillo de circulación.",
+    "vidriera-04.jpg": "Vidriera de exhibición de gran formato con estantes iluminados y piso negro pulido.",
+    "mostrador-05.jpg": "Mostrador de atención con friso LED verde y acceso a sector interno del local."
+  }
+}

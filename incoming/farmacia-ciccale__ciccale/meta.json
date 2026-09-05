@@ -3,12 +3,17 @@
   "localidad": "",
   "provincia": "",
   "anio": 2026,
-  "orden": ["mostrador-05.jpg", "cartel-02.jpg", "mostrador-03.jpg", "estanteria-04.jpg", "rincon-01.jpg"],
+  "orden": ["mostrador-05.jpg", "cartel-02.jpg", "mostrador-03.jpg", "estanteria-04.jpg", "rincon-01.jpg", "cartel-07.jpg", "estanteria-06.jpg", "mostrador-08.jpg", "deposito-09.jpg", "rincon-10.jpg"],
   "fotos": {
     "mostrador-05.jpg": "Mostrador principal de Farmacia Ciccale con frente verde, columna señalizadora con el logo y estantería alta vidriada e iluminada.",
     "cartel-02.jpg": "Detalle del mostrador con el cartel institucional de Farmacia Ciccale sobre frente verde y alacenas superiores con puertas de vidrio.",
     "mostrador-03.jpg": "Mostrador con tapa de vidrio y cajoneras, estantería de slatwall con estantes blancos e iluminación LED, y acceso al depósito.",
     "estanteria-04.jpg": "Estantería perimetral en melamina blanca con paneles slatwall, cajones verdes e iluminación LED vertical.",
-    "rincon-01.jpg": "Rincón de estanterías en L con zócalo verde, estantes regulables y tiras LED, listo para reponer mercadería."
+    "rincon-01.jpg": "Rincón de estanterías en L con zócalo verde, estantes regulables y tiras LED, listo para reponer mercadería.",
+    "cartel-07.jpg": "Columna con el logo circular de Farmacia Ciccale sobre frente verde, junto a estanterías vidriadas e iluminadas.",
+    "estanteria-06.jpg": "Estantería esquinera en melamina blanca con paneles slatwall, cajones verdes e iluminación LED vertical.",
+    "mostrador-08.jpg": "Mostrador con tapa de vidrio y estanterías traseras vidriadas e iluminadas en el sector de recetario.",
+    "deposito-09.jpg": "Vista hacia el depósito y sector interno, con estanterías perimetrales y cajones verdes.",
+    "rincon-10.jpg": "Rincón de estanterías con el logo de Farmacia Ciccale sobre frente verde y estantes regulables iluminados."
   }
 }

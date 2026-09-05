@@ -1,0 +1,13 @@
+{
+  "farmacia": null,
+  "localidad": "",
+  "provincia": "",
+  "anio": 2026,
+  "orden": ["mostrador-01.jpg", "vitrina-02.jpg", "obra-03.jpg", "estanteria-04.jpg"],
+  "fotos": {
+    "mostrador-01.jpg": "Mostrador de atención en melamina blanca con friso superior en madera y estanterías perimetrales de farmacia recién instaladas.",
+    "vitrina-02.jpg": "Vitrina de exhibición con estantes de vidrio y mostrador de recepción con frente de madera.",
+    "obra-03.jpg": "Mostradores con tapa de vidrio en etapa de montaje, con escalera de obra al fondo del local.",
+    "estanteria-04.jpg": "Vitrinas modulares con puertas de vidrio y zócalo en melamina símil madera, listas para reponer mercadería."
+  }
+}

@@ -1,9 +1,6 @@
 ---
 import Section from './Section.astro';
 import Reveal from './Reveal.astro';
-import { fotoPorNombre } from '../data/proyectos';
-
-const fondo = fotoPorNombre('andresito', 'obra-03');
 
 const hitos = [
   { dato: 'Bragado', detalle: 'Taller y fabricación · Provincia de Buenos Aires' },
@@ -12,7 +9,7 @@ const hitos = [
 ---
 
 <Section id="cobertura" variant="ink" class="cobertura">
-  <div class="bg" style={`background-image:url(${fondo.src})`} aria-hidden="true"></div>
+  <div class="bg" style="background-image:url(/images/brand/flete-01.jpg)" aria-hidden="true"></div>
   <div class="scrim" aria-hidden="true"></div>
 
   <div class="container-x inner">

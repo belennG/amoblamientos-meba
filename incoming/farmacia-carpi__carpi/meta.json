@@ -1,0 +1,12 @@
+{
+  "farmacia": "Farmacia Carpi",
+  "localidad": "",
+  "provincia": "",
+  "anio": 2026,
+  "orden": ["fachada-03.jpg", "salon-01.jpg", "perfumeria-02.jpg"],
+  "fotos": {
+    "fachada-03.jpg": "Fachada de Farmacia Carpi con cartel institucional y cruz farmacéutica en la entrada.",
+    "salon-01.jpg": "Sector de perfumería y cuidado personal con mostrador de vidrio y plantas decorativas.",
+    "perfumeria-02.jpg": "Estanterías de cuidado del cabello y cosmética totalmente repuestas en el salón de venta."
+  }
+}

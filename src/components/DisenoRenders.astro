@@ -9,7 +9,7 @@ const wa = whatsappUrl(
 ---
 
 <Section id="renders" variant="panel-2">
-  <div class="container-x">
+  <div class="container-x grid">
     <Reveal as="article" class="bloque">
       <p class="kicker">Diseño 3D</p>
       <h2>Renders sin cargo</h2>
@@ -22,10 +22,36 @@ const wa = whatsappUrl(
         Pedir mi render por WhatsApp
       </a>
     </Reveal>
+
+    <Reveal class="col-img" delay={120}>
+      <img
+        src="/images/brand/render-ejemplo.png"
+        alt="Ejemplo de render 3D de un salón de farmacia con mostradores y estanterías propuestos"
+        width="1069"
+        height="750"
+        loading="lazy"
+      />
+    </Reveal>
   </div>
 </Section>
 
 <style>
+  .grid {
+    display: grid;
+    gap: clamp(2rem, 6vw, 4.5rem);
+    align-items: center;
+  }
+  @media (min-width: 900px) {
+    .grid {
+      grid-template-columns: 1.1fr 0.9fr;
+    }
+  }
+  :global(#renders .col-img) img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    border: 1px solid var(--color-line);
+  }
   /* .bloque is rendered by <Reveal as="article">, so it never carries this
      component's scope attribute — :global() is required for it to match. */
   :global(#renders .bloque) h2 {
