@@ -64,10 +64,12 @@ import { proyectos } from '../data/proyectos';
 </script>
 
 <style>
-  .intro {
+  /* .intro is rendered by <Reveal>, so it never carries this component's
+     scope attribute — :global() is required for it to match. */
+  :global(#proyectos .intro) {
     text-align: center;
   }
-  .intro :global(.kicker)::before {
+  :global(#proyectos .intro) .kicker::before {
     margin-inline: auto;
   }
   h2 {

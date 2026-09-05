@@ -26,16 +26,18 @@ import Reveal from './Reveal.astro';
 </Section>
 
 <style>
-  .bloque h2 {
+  /* .bloque and .nota are rendered by <Reveal>, so they never carry this
+     component's scope attribute — :global() is required for them to match. */
+  :global(#convenios .bloque) h2 {
     font-size: clamp(1.8rem, 4.4vw, 2.6rem);
     margin: 1rem 0 1.5rem;
   }
-  .bloque p {
+  :global(#convenios .bloque) p {
     color: var(--color-muted);
     max-width: 46ch;
     margin: 0 0 2.2rem;
   }
-  .bloque strong {
+  :global(#convenios .bloque) strong {
     color: var(--color-cream);
     font-weight: 500;
   }
@@ -48,12 +50,12 @@ import Reveal from './Reveal.astro';
   .link:hover {
     border-color: var(--color-gold);
   }
-  .nota {
+  :global(#convenios .nota) {
     margin-top: clamp(3rem, 8vw, 5rem);
     padding-top: 2rem;
     border-top: 1px solid var(--color-line);
   }
-  .nota p {
+  :global(#convenios .nota) p {
     margin: 0;
     font-family: var(--font-serif);
     font-style: italic;
@@ -61,7 +63,7 @@ import Reveal from './Reveal.astro';
     color: var(--color-cream);
     max-width: 40ch;
   }
-  .nota strong {
+  :global(#convenios .nota) strong {
     font-style: normal;
     color: var(--color-gold);
     font-weight: 500;

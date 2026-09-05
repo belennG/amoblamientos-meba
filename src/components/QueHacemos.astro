@@ -97,16 +97,18 @@ const foto = fotoPorNombre('andresito', 'perfumeria-04');
       grid-template-columns: repeat(4, 1fr);
     }
   }
-  .card {
+  /* .card is rendered by <Reveal as="article">, so it never carries this
+     component's scope attribute — :global() is required for it to match. */
+  :global(#que-hacemos .card) {
     background: var(--color-ink);
     padding: clamp(2.25rem, 4vw, 3.25rem) clamp(1.75rem, 3.5vw, 2.4rem);
   }
-  .card h3 {
+  :global(#que-hacemos .card) h3 {
     font-size: 1.6rem;
     color: var(--color-gold);
     margin: 0 0 0.85rem;
   }
-  .card p {
+  :global(#que-hacemos .card) p {
     color: var(--color-muted);
     font-size: 0.9rem;
     margin: 0;

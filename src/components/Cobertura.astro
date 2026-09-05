@@ -83,7 +83,9 @@ const hitos = [
       max-width: 40rem;
     }
   }
-  .hito {
+  /* .hito is rendered by <Reveal>, so it never carries this component's
+     scope attribute — :global() is required for it to match. */
+  :global(#cobertura .hito) {
     border-left: 2px solid var(--color-gold);
     padding-left: 1.1rem;
     display: flex;
