@@ -8,12 +8,9 @@ const hitos = [
 ];
 ---
 
-<Section id="cobertura" variant="ink" class="cobertura">
-  <div class="bg" style="background-image:url(/images/brand/flete-01.jpg)" aria-hidden="true"></div>
-  <div class="scrim" aria-hidden="true"></div>
-
-  <div class="container-x inner">
-    <Reveal>
+<Section id="cobertura" variant="ink">
+  <div class="container-x grid">
+    <Reveal class="col-text">
       <p class="kicker">Cobertura nacional</p>
       <h2>Estamos en Bragado y llegamos a toda la Argentina</h2>
       <p class="lead">
@@ -21,43 +18,41 @@ const hitos = [
         farmacia. Ya instalamos mobiliario en la Provincia de Buenos Aires y en el interior del país;
         organizamos cada envío para que el mueble llegue en fecha y se arme en el lugar.
       </p>
+
+      <div class="hitos">
+        {
+          hitos.map((h, i) => (
+            <Reveal class="hito" delay={i * 90}>
+              <span class="hito__dato">{h.dato}</span>
+              <span class="hito__detalle">{h.detalle}</span>
+            </Reveal>
+          ))
+        }
+      </div>
     </Reveal>
 
-    <div class="hitos">
-      {
-        hitos.map((h, i) => (
-          <Reveal class="hito" delay={i * 90}>
-            <span class="hito__dato">{h.dato}</span>
-            <span class="hito__detalle">{h.detalle}</span>
-          </Reveal>
-        ))
-      }
-    </div>
+    <Reveal class="col-img" delay={120}>
+      <img
+        src="/images/brand/flete-01.jpg"
+        alt="Camión de Amoblamientos MEBA entregando mobiliario junto al cartel de acceso a El Colorado, Formosa"
+        width="1290"
+        height="972"
+        loading="lazy"
+      />
+    </Reveal>
   </div>
 </Section>
 
 <style>
-  .cobertura {
-    overflow: hidden;
+  .grid {
+    display: grid;
+    gap: clamp(2rem, 6vw, 4.5rem);
+    align-items: center;
   }
-  .bg {
-    position: absolute;
-    inset: 0;
-    background-size: cover;
-    background-position: center;
-    opacity: 0.28;
-  }
-  .scrim {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      180deg,
-      rgba(13, 11, 10, 0.85),
-      rgba(13, 11, 10, 0.95)
-    );
-  }
-  .inner {
-    position: relative;
+  @media (min-width: 900px) {
+    .grid {
+      grid-template-columns: 1.05fr 0.95fr;
+    }
   }
   h2 {
     font-size: clamp(2rem, 5vw, 3rem);
@@ -69,16 +64,17 @@ const hitos = [
     max-width: 54ch;
     margin: 0;
   }
+  :global(#cobertura .col-img) img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    border: 1px solid var(--color-line);
+  }
   .hitos {
-    margin-top: clamp(3rem, 8vw, 4.5rem);
+    margin-top: clamp(2.5rem, 6vw, 3.5rem);
     display: grid;
     gap: 1.5rem;
-  }
-  @media (min-width: 800px) {
-    .hitos {
-      grid-template-columns: repeat(2, 1fr);
-      max-width: 40rem;
-    }
+    grid-template-columns: repeat(2, 1fr);
   }
   /* .hito is rendered by <Reveal>, so it never carries this component's
      scope attribute — :global() is required for it to match. */
